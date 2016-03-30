@@ -24,6 +24,7 @@ gem "sprockets-es6"
 gem "title"
 gem "uglifier"
 gem "slim"
+gem "clearance"
 
 group :development do
   gem "quiet_assets"

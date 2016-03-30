@@ -1,7 +1,9 @@
 require "rails_helper"
 
-feature "Create article" do
+feature "User creates article" do
   scenario "through the new article page" do
+    user = create(:user)
+    login_as(user)
     visit new_article_path
 
     fill_in "Title", with: "My New Title"
@@ -9,6 +11,6 @@ feature "Create article" do
     click_on "Create Article"
 
     expect(page).to have_content("My New Title")
-
+    expect(page).to have_content("Written by #{user.email}")
   end
 end

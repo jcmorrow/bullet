@@ -3,8 +3,9 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :body
-
-      t.timestamps
+      t.integer :user_id, null: false
     end
+
+    add_index :articles, :user_id
   end
 end

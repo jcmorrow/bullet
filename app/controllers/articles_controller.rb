@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
 
   def new
-    @article = Article.new
+    # the line below this has horrible indentation and should be caught by hound
+        @article = Article.new
   end
 
   def create
